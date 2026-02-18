@@ -4,7 +4,6 @@ import pickle
 import os
 import requests
 import json
-from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
 # Load API key from .env
