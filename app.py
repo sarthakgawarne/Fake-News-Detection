@@ -103,7 +103,7 @@ if st.button("Analyze"):
         st.warning("Please enter news text or URL.")
         st.stop()
 
-   final_text = user_input
+    final_text = user_input
 
 
     # -------- ML Prediction --------
