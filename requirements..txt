@@ -1,7 +1,8 @@
-streamlit
+streamlit==1.32.0
 scikit-learn
 numpy
 pandas
 beautifulsoup4
+lxml
 requests
 python-dotenv
