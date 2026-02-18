@@ -22,7 +22,7 @@ st.caption("Gawarne Sarthak Sunil")
 st.caption("Naive Bayes Classification with AI-based Explanation")
 
 user_input = st.text_area(
-    "Enter News (URL or Text):",
+    "Enter News (Text):",
     height=200
 )
 
