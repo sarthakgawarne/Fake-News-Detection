@@ -31,29 +31,6 @@ def is_url(text):
     text = text.strip().lower()
     return text.startswith(("http://", "https://", "www."))
 
-# ---------------- ARTICLE EXTRACTION ----------------
-def extract_text_from_url(url):
-    try:
-        if url.startswith("www."):
-            url = "https://" + url
-
-        headers = {"User-Agent": "Mozilla/5.0"}
-        r = requests.get(url, headers=headers, timeout=10)
-
-        soup = BeautifulSoup(r.text, "html.parser")
-
-        # remove unwanted parts
-        for tag in soup(["script", "style", "noscript", "header", "footer", "nav", "aside"]):
-            tag.decompose()
-
-        paragraphs = soup.find_all("p")
-        article = " ".join(p.get_text() for p in paragraphs)
-        article = " ".join(article.split())
-
-        return article[:1500]
-
-    except Exception:
-        return None
 
 # ---------------- OPENROUTER LLM EXPLANATION ----------------
 def get_llm_explanation(text, label, confidence):
@@ -126,20 +103,8 @@ if st.button("Analyze"):
         st.warning("Please enter news text or URL.")
         st.stop()
 
-    # Handle URL or Text
-    if is_url(user_input):
-        st.info("🔗 Reading article from link...")
-        extracted_text = extract_text_from_url(user_input)
+   final_text = user_input
 
-        if extracted_text is None or len(extracted_text) < 200:
-            st.error("Could not extract article from this link.")
-            st.stop()
-
-        final_text = extracted_text
-        st.success("Article extracted successfully.")
-
-    else:
-        final_text = user_input
 
     # -------- ML Prediction --------
     input_data = vectorizer.transform([final_text])
