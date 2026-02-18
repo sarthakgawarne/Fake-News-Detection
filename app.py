@@ -4,10 +4,9 @@ import pickle
 import os
 import requests
 import json
-from dotenv import load_dotenv
 
 # Load API key from .env
-load_dotenv()
+
 
 # ---------------- LOAD ML MODEL ----------------
 model = pickle.load(open("fake_news_model.pkl", "rb"))
@@ -35,7 +34,8 @@ def is_url(text):
 # ---------------- OPENROUTER LLM EXPLANATION ----------------
 def get_llm_explanation(text, label, confidence):
 
-    api_key = os.getenv("OPENROUTER_API_KEY")
+    api_key = st.secrets["OPENROUTER_API_KEY"]
+
 
     url = "https://openrouter.ai/api/v1/chat/completions"
 
