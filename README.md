@@ -3,7 +3,7 @@ Fake News Detection System (Explainable AI)
 A Machine Learning + AI powered web application that detects whether a news article is **REAL or FAKE** and also provides a human-readable explanation for the prediction.
 
 🔗 **Live Demo:**
-https://your-streamlit-link.streamlit.app
+https://fake-news-detector-ku0r.onrender.com
 
 ---
 
