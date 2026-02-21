@@ -38,15 +38,15 @@ This approach falls under the concept of **Explainable Artificial Intelligence (
 ## 🏗️ System Architecture
 
 User Input
-⬇
+>
 Text Preprocessing
-⬇
+>
 TF-IDF Vectorization
-⬇
+>
 Naive Bayes Classifier
-⬇
+>
 Prediction + Confidence Score
-⬇
+>
 AI Language Model Explanation
 
 ---
@@ -96,14 +96,6 @@ The dataset allowed the model to learn patterns such as:
 * emotional claims
 * lack of credible sources
 * neutral journalistic tone
-
-## 🔐 Environment Variables
-
-Create a `.env` file and add your API key:
-
-```
-OPENROUTER_API_KEY=your_api_key_here
-```
 
 ---
 
